@@ -21,23 +21,27 @@
 			"include": "#operators"
 		}
 	],
+
 	"repository": {
 		"comments": {
 			"patterns": [
 				{
 					"match": "^\\s*((\\*+).*)",
-					"name": "comment.r53d"
+					"name": "comment.line.r53d"
+				},
+				{
+					"begin": "\\*",
+					"end": "$",
+					"name": "comment.block.r53d"
 				}
 			]
 		},
 		"strings": {
-			"begin": "=|^[ ]*[.]",
-			"end": "\\n",
+			"match": "(^[ ]*(=|[.]).*$)",
 			"name": "string.r53d support.type.property-name.r53d"
 		},
 		"objectkey": {
-			"begin": "^[ ]*",
-			"end": "\\d*",
+			"match": "^[ ]*[0-9]+",
 			"name": "string.quoted.double.r53d"
 		},
 		"keywords": {
@@ -76,47 +80,27 @@
 			"patterns": [
 				{
 					"match": "([+-]?\\d+[.]\\d+e?[+-]?\\d*)",
-					"captures": {
-						"1": {
-							"name": "constant.numeric.r53d"
-						}
-					}
+					"name": "constant.numeric.r53d"
 				},
 				{
 					"match": "([+-]?[.]\\d+e?[+-]?\\d*)",
-					"captures": {
-						"1": {
-							"name": "constant.numeric.r53d"
-						}
-					}
+					"name": "constant.numeric.r53d"
 				},
 				{
 					"match": "([+-]?\\d+[.]e?[+-]?\\d*)",
-					"captures": {
-						"1": {
-							"name": "constant.numeric.r53d"
-						}
-					}
+					"name": "constant.numeric.r53d"
 				},
 				{
 					"match": "([+-]?\\b\\d+\\b)",
-					"captures": {
-						"1": {
-							"name": "constant.language.r53d"
-						}
-					}
+					"name": "constant.language.r53d"
 				}
 			]
 		},
 		"operators": {
 			"patterns": [
 				{
-					"match": "\\b(\\+|eq|ne|gt|ge|lt|le|l|n|and|or|xor)\\b",
-					"captures": {
-						"1": {
-							"name": "keyword.operator.r53d"
-						}
-					}
+					"match": "\\+|\\b(eq|ne|gt|ge|lt|le|l|n|and|or|xor)\\b",
+					"name": "keyword.operator.r53d"
 				}
 			]
 		}
