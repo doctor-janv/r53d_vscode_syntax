@@ -1,0 +1,25 @@
+{
+  "name": "r53d",
+  "displayName": "relap5-3d",
+  "description": "relap5-3d input files",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.86.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "r53d",
+      "aliases": ["relap5-3d", "r53d"],
+      "extensions": [".r53d"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "r53d",
+      "scopeName": "input.r53d",
+      "path": "./syntaxes/r53d.tmLanguage.json"
+    }]
+  }
+}
