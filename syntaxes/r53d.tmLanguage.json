@@ -47,7 +47,7 @@
 		"keywords": {
 			"patterns": [
 				{
-				"match": "(?i)\\b(new|newath|restart|plot|reedit|strip|stdy-st|transnt|binary|fmtout|mbinary|inp-chk|run|ascii|binary|mbinary|ncmpress|cmpress|csv|none|argon|helium|hydrogen|nitrogen|xenon|krypton|air|sf6|oxygen|co2|co|fixed|moving|h2o|d2o|h2|li|k|he|n2|na|nak|lipb|nh3|h2on|glycerol|blood|bipb|h2o95|co2|hen|xen|henxen|ms1|ms2|ms3|ms4|dowa|r134a|pb|vertrel|h2o95n|dtstep|verify|noverify|backair|backpck|backvel|backall|dump)\\b",
+				"match": "(?i)\\b(new|newath|restart|plot|reedit|strip|stdy-st|transnt|binary|fmtout|mbinary|inp-chk|run|ascii|binary|mbinary|ncmpress|cmpress|csv|none|argon|helium|hydrogen|nitrogen|xenon|krypton|air|sf6|oxygen|co2|co|fixed|moving|h2o|d2o|h2|li|k|he|n2|na|nak|lipb|nh3|h2on|glycerol|blood|bipb|h2o95|co2|hen|xen|henxen|ms1|ms2|ms3|ms4|dowa|r134a|pb|vertrel|h2o95n|dtstep|verify|noverify|backair|backpck|backvel|backall|dump|si|british)\\b",
 				"name": "keyword.control.r53d"
 				},
 				{
@@ -79,15 +79,15 @@
 		"numbers": {
 			"patterns": [
 				{
-					"match": "([+-]?\\d+[.]\\d+e?[+-]?\\d*)",
+					"match": "([+-]?\\d+[.]\\d+[eE]?[+-]?\\d*)",
 					"name": "constant.numeric.r53d"
 				},
 				{
-					"match": "([+-]?[.]\\d+e?[+-]?\\d*)",
+					"match": "([+-]?[.]\\d+[eE]?[+-]?\\d*)",
 					"name": "constant.numeric.r53d"
 				},
 				{
-					"match": "([+-]?\\d+[.]e?[+-]?\\d*)",
+					"match": "([+-]?\\d+[.][eE]?[+-]?\\d*)",
 					"name": "constant.numeric.r53d"
 				},
 				{
