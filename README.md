@@ -19,6 +19,61 @@ Syntax highlighting for [RELAP5-3D](https://relap53d.inl.gov/SitePages/Home.aspx
 * You can modify the extension directly in the `<user home>/.vscode/extensions/r53d` folder.
 * After saving the changes you have to reboot vscode to apply them.
 
+## Change default color scheme
+To change the default color scheme append the following settings to the `settings.json` file:
+
+```json
+
+  "editor.tokenColorCustomizations": {
+      "textMateRules": [
+          {
+            "scope": "support.type.property-name.r53d",
+            "settings": {
+              "foreground": "#0000FF"
+            }
+          },
+          {
+            "scope": "keyword.operator.r53d",
+            "settings": {
+              "foreground": "#ff0000"
+            }
+          },
+          {
+            "scope": ["comment.line.r53d","comment.block.r53d"],
+            "settings": {
+              "foreground": "#fff700"
+            }
+          },
+          {
+            "scope": ["string.quoted.double.r53d"],
+            "settings": {
+              "foreground": "#2bff00"
+            }
+          },
+          {
+            "scope": ["keyword.control.r53d"],
+            "settings": {
+              "foreground": "#00f7ff"
+            }
+          },
+          {
+            "scope": ["constant.numeric.r53d"],
+            "settings": {
+              "foreground": "#ff00f2"
+            }
+          },
+          {
+            "scope": ["constant.language.r53d"],
+            "settings": {
+              "foreground": "#ffa200"
+            }
+          }
+      ]
+  }
+
+```
+
+
 ## Add more language features
 
 * To add features such as IntelliSense, hovers and validators check out the VS Code extenders documentation at https://code.visualstudio.com/docs
