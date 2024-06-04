@@ -90,7 +90,7 @@ For example if there is an image subfolder under your extension project workspac
 
 ## Known Issues
 
-`N/A.`
+If the exension end up in the file `.vscode/extensions/.obsolete` delete both the .osolete file and the `.vscode/extensions/extensions.json` file and restart vscode
 
 ## Release Notes
 
