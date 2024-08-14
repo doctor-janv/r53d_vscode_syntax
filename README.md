@@ -25,51 +25,79 @@ To change the default color scheme append the following settings to the `setting
 ```json
 
   "editor.tokenColorCustomizations": {
-      "textMateRules": [
-          {
-            "scope": "support.type.property-name.r53d",
-            "settings": {
-              "foreground": "#0000FF"
+        "textMateRules": [
+            // Strings.
+            {
+                "scope": "input.r53d",
+                "settings": {
+                  "foreground": "#ffffff"
+                }
+            },
+            // Title and End of the input file.
+            {
+              "scope": "support.type.property-name.r53d",
+              "settings": {
+                "foreground": "#9CDCFE"
+              }
+            },
+            // Comments.
+            {
+              "scope": ["comment.line.r53d","comment.block.r53d"],
+              "settings": {
+                "foreground": "#57A64A"
+              }
+            },
+            // Heat Structures cards.
+            {
+              "scope": ["constant.other.character-class.regexp.r53d"],
+              "settings": {
+                "foreground": "#D16969"
+              }
+            },
+            // Neutronic cards.
+            {
+               "scope": ["keyword.other.operator.r53d"],
+               "settings": {
+                 "foreground": "#D8A0DF"
+                }
+            },
+            // Rest of the cards.
+            {
+               "scope": ["string.quoted.single.r53d"],
+               "settings": {
+                 "foreground": "#CE9178"
+                }
+            },
+            // Keywords.
+            {
+              "scope": ["keyword.control.r53d"],
+              "settings": {
+                "foreground": "#D8A0DF"
+              }
+            },
+            // Floating point numbers.
+            {
+              "scope": ["constant.numeric.r53d"],
+              "settings": {
+                "foreground": "#B5CEA8"
+              }
+            },
+            // Integers.
+            {
+              "scope": ["constant.language.r53d"],
+              "settings": {
+                "foreground": "#569CD6"
+              }
+            },
+            // Operators including + sign.
+            {
+              "scope": "keyword.operator.r53d",
+              "settings": {
+                "foreground": "#B4B4B4"
+              }
             }
-          },
-          {
-            "scope": "keyword.operator.r53d",
-            "settings": {
-              "foreground": "#ff0000"
-            }
-          },
-          {
-            "scope": ["comment.line.r53d","comment.block.r53d"],
-            "settings": {
-              "foreground": "#fff700"
-            }
-          },
-          {
-            "scope": ["string.quoted.double.r53d"],
-            "settings": {
-              "foreground": "#2bff00"
-            }
-          },
-          {
-            "scope": ["keyword.control.r53d"],
-            "settings": {
-              "foreground": "#00f7ff"
-            }
-          },
-          {
-            "scope": ["constant.numeric.r53d"],
-            "settings": {
-              "foreground": "#ff00f2"
-            }
-          },
-          {
-            "scope": ["constant.language.r53d"],
-            "settings": {
-              "foreground": "#ffa200"
-            }
-          }
-      ]
-  }
+        ]
+    }
 
 ```
 

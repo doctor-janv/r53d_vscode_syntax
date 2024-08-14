@@ -21,62 +21,78 @@
 			"include": "#operators"
 		}
 	],
-
 	"repository": {
 		"comments": {
+			"lable": "Comment",
 			"patterns": [
 				{
-					"match": "^\\s*((\\*+).*)",
+					"match": "^\\s*(([\\*$]+).*)",
 					"name": "comment.line.r53d"
 				},
 				{
-					"begin": "\\*",
+					"begin": "[\\*$]",
 					"end": "$",
 					"name": "comment.block.r53d"
 				}
 			]
 		},
 		"strings": {
+			"lable": "Title and End of the input file",
 			"match": "(^[ ]*(=|[.]).*$)",
 			"name": "string.r53d support.type.property-name.r53d"
 		},
 		"objectkey": {
-			"match": "^[ ]*[0-9]+",
-			"name": "string.quoted.double.r53d"
+				"lable": "Heat Structures cards, Neutronic cards, Rest of the cards",
+				"patterns": [
+				{
+					"match": "^[ ]*3[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]?",
+					"name": "keyword.other.operator.r53d"
+				},
+				{
+					"match": "^[ ]*1[0-9][0-9][0-9][0-9][0-9][0-9][0-9]",
+					"name": "constant.other.character-class.regexp.r53d"
+				},
+				{
+					"match": "^[ ]*[0-9]+",
+					"name": "string.quoted.single.r53d"
+				}
+			]
 		},
 		"keywords": {
+			"lable": "Keywords",
 			"patterns": [
 				{
-				"match": "(?i)\\b(new|newath|restart|plot|reedit|strip|stdy-st|transnt|binary|fmtout|mbinary|inp-chk|run|ascii|binary|mbinary|ncmpress|cmpress|csv|none|argon|helium|hydrogen|nitrogen|xenon|krypton|air|sf6|oxygen|co2|co|fixed|moving|h2o|d2o|h2|li|k|he|n2|na|nak|lipb|nh3|h2on|glycerol|blood|bipb|h2o95|co2|hen|xen|henxen|ms1|ms2|ms3|ms4|dowa|r134a|pb|vertrel|h2o95n|dtstep|verify|noverify|backair|backpck|backvel|backall|dump|si|british)\\b",
+				"match": "(?i)'?\\b(new|newath|restart|plot|reedit|strip|stdy-st|transnt|binary|fmtout|mbinary|inp-chk|run|ascii|binary|mbinary|ncmpress|cmpress|csv|none|argon|helium|hydrogen|nitrogen|xenon|krypton|air|sf6|oxygen|co2|co|fixed|moving|h2o|d2o|h2|li|k|he|n2|na|nak|lipb|nh3|h2on|glycerol|blood|bipb|h2o95|co2|hen|xen|henxen|ms1|ms2|ms3|ms4|dowa|r134a|pb|vertrel|h2o95n|dtstep|verify|noverify|backair|backpck|backvel|backall|dump|si|british)\\b'?",
 				"name": "keyword.control.r53d"
 				},
 				{
-				"match": "(?i)\\b(count|cputime|dt|dtcrnt|emass|errmax|null|rranga|rrangl|rrangw|rrdisa|rrdisp|rrdisv|rrdmeg|rromeg|stdtrn|testda|time|tmass|levhgt|levvel|levvda|levvdb|levvnm|sysmer|sysmerb|sysmerf|sysmerg|sysmern|systmc|systmbc|systmfc|systmgc|systmnc|systms|systmbs|systmfs|systmgs|systmns|acpgtg|acpnit|acqtank|acrhon|acttank|acvdm|acvgtg|acvliq|ahfgtf|ahfgtg|ahftg|ahgtf|avgtg|aviscn|betav|cdim|cpreff|cprhead|cprmt|cprnrt|cprtrq|cprvel|dim|dmgdt|gamasp|gdry|omega|pmphead|pmpmt|pmpnrt|pmptrq|pmpvel|przlvl|theta|tureff|turpow|turtrq|turvel|vlvarea|vlvstem|volstem|xco|xcu|xi|allvols|avol|betaff|betagg|boron|csubpf|csubpg|drfdp|drfduf|drgdp|drgdug|drgdxa|dtdp|dtdug|dtdxa|dtfdp|dtfduf|dtgdp|dtgdug|dtgdxa|floreg|fwalf|fwalg|gammac|gammai|gammaw|gravv|hgf|hif|hig|hsteam|hvmix|hyposv|kappaf|kappag|p|pecltv|pps|q|quala|qualan1|qualan2|qualan3|qualan4|qualan5|quale|quals|qwg|rho|rhof|rhog|rhom|sathf|sathg|sattemp|sigma|sounde|tempf|tempg|tfront|tgavg|thconf|thcong|tiengv|tmassv|tmassbv|tmassfv|tmassgv|tmassnv|tsatt|uf|ug|vapgen|velf*|velg*|vfront|viscf|viscg|voidf|voidg|voidla|voidlb|vollev|volmas|volmasb|volmasf|volmasg|volmasn|volmer|volmerb|volmerf|volmerg|alljuns|boronj|c0j|ccflf|chokef|dllpzk|dllpzl|dpelj|dpfkj|fij|fjunft|fjunrt|flenth|flentha|flenthf|flenthg|florgj|formfj|formgj|fricxk|fricxl|fwalfj|fwalgj|hlossx|iregj|mflowbj|mflowfj|mflowgj|mflowj|mflownj|qualaj|qualnj1|qualnj2|qualnj3|qualnj4|qualnj5|rhofj|rhogj|sonicj|tasapk|tasapl|ufj|ugj|velfj|velgj|vgjj|voidfj|voidgj|voidj|xej|fwdvol|fwstif|fwvol|fwdx|h2gen|htchf|htgamw|hthtc|htmode|htmwpow|htmwrq|htpowg|htrg|htrnr|httemp|htvat|oxti|oxto|pecl|stant|fines|tchfqf|trewet|zqbot|zqtop|qrad|rdres|rkacpow|rkfipow|rkgapow|rkreac|rkrecper|rktpow|coni|conpm|consm|conxe|rdres|rkobtb|rkocracf|rkocrdcf|rkocrpsn|rkod|rkoegv|rkofipow|rkogapow|rkophi|rkoacpow|rkondfip|rkondfpd|rkondrfp|rkonrfp|rkorecpr|rkosiga|rkosigf|rkosigs1|rkosigs2|rkosigs3|rkotpow|rkoznalp|rkoznbor|rkoznden|rkoznfip|rkozngap|rkoznpwa|rkoznpwk|rkozntf|rkozntm|rkozntpw|uservar1|uservar2|uservar3|uservar4|cntrlvar|timeof|tablein|tableout|null)\\b",
+				"match": "(?i)'?\\b(count|cputime|dt|dtcrnt|emass|errmax|null|rranga|rrangl|rrangw|rrdisa|rrdisp|rrdisv|rrdmeg|rromeg|stdtrn|testda|time|tmass|levhgt|levvel|levvda|levvdb|levvnm|sysmer|sysmerb|sysmerf|sysmerg|sysmern|systmc|systmbc|systmfc|systmgc|systmnc|systms|systmbs|systmfs|systmgs|systmns|acpgtg|acpnit|acqtank|acrhon|acttank|acvdm|acvgtg|acvliq|ahfgtf|ahfgtg|ahftg|ahgtf|avgtg|aviscn|betav|cdim|cpreff|cprhead|cprmt|cprnrt|cprtrq|cprvel|dim|dmgdt|gamasp|gdry|omega|pmphead|pmpmt|pmpnrt|pmptrq|pmpvel|przlvl|theta|tureff|turpow|turtrq|turvel|vlvarea|vlvstem|volstem|xco|xcu|xi|allvols|avol|betaff|betagg|boron|csubpf|csubpg|drfdp|drfduf|drgdp|drgdug|drgdxa|dtdp|dtdug|dtdxa|dtfdp|dtfduf|dtgdp|dtgdug|dtgdxa|floreg|fwalf|fwalg|gammac|gammai|gammaw|gravv|hgf|hif|hig|hsteam|hvmix|hyposv|kappaf|kappag|p|pecltv|pps|q|quala|qualan1|qualan2|qualan3|qualan4|qualan5|quale|quals|qwg|rho|rhof|rhog|rhom|sathf|sathg|sattemp|sigma|sounde|tempf|tempg|tfront|tgavg|thconf|thcong|tiengv|tmassv|tmassbv|tmassfv|tmassgv|tmassnv|tsatt|uf|ug|vapgen|velf*|velg*|vfront|viscf|viscg|voidf|voidg|voidla|voidlb|vollev|volmas|volmasb|volmasf|volmasg|volmasn|volmer|volmerb|volmerf|volmerg|alljuns|boronj|c0j|ccflf|chokef|dllpzk|dllpzl|dpelj|dpfkj|fij|fjunft|fjunrt|flenth|flentha|flenthf|flenthg|florgj|formfj|formgj|fricxk|fricxl|fwalfj|fwalgj|hlossx|iregj|mflowbj|mflowfj|mflowgj|mflowj|mflownj|qualaj|qualnj1|qualnj2|qualnj3|qualnj4|qualnj5|rhofj|rhogj|sonicj|tasapk|tasapl|ufj|ugj|velfj|velgj|vgjj|voidfj|voidgj|voidj|xej|fwdvol|fwstif|fwvol|fwdx|h2gen|htchf|htgamw|hthtc|htmode|htmwpow|htmwrq|htpowg|htrg|htrnr|httemp|htvat|oxti|oxto|pecl|stant|fines|tchfqf|trewet|zqbot|zqtop|qrad|rdres|rkacpow|rkfipow|rkgapow|rkreac|rkrecper|rktpow|coni|conpm|consm|conxe|rdres|rkobtb|rkocracf|rkocrdcf|rkocrpsn|rkod|rkoegv|rkofipow|rkogapow|rkophi|rkoacpow|rkondfip|rkondfpd|rkondrfp|rkonrfp|rkorecpr|rkosiga|rkosigf|rkosigs1|rkosigs2|rkosigs3|rkotpow|rkoznalp|rkoznbor|rkoznden|rkoznfip|rkozngap|rkoznpwa|rkoznpwk|rkozntf|rkozntm|rkozntpw|uservar1|uservar2|uservar3|uservar4|cntrlvar|timeof|tablein|tableout|null)\\b'?",
 				"name": "keyword.control.r53d"
 				},
 				{
-					"match": "(?i)\\b(snglvol|tmdpvol|sngljun|tmdpjun|snglfw|pipe|annulus|prizer|branch|separatr|fwhtr|jetmixer|turbine|eccmix|valve|pump|cprssr|mtpljun|mtplfw|accum|multid|cpljun)\\b",
+					"match": "(?i)'?\\b(snglvol|tmdpvol|sngljun|tmdpjun|snglfw|pipe|annulus|prizer|branch|separatr|fwhtr|jetmixer|turbine|eccmix|valve|pump|cprssr|mtpljun|mtplfw|accum|multid|cpljun)\\b'?",
 					"name": "keyword.control.r53d"
 				},
 				{
-					"match": "(?i)\\b(gap|c-steel|s-steel|uo2|zr|tbl/fctn)\\b",
+					"match": "(?i)'?\\b(gap|c-steel|s-steel|uo2|zr|tbl/fctn)\\b'?",
 					"name": "keyword.control.r53d"
 				},
 				{
-					"match": "(?i)\\b(sum|mult|div|diffreni|diffrend|integral|delay|function|stdfnctn|tripunit|tripdlay|poweri|powerr|powerx|prop-int|lag|lead-lag|constant|shaft|pumpctl|steamctl|feedctl|invkin|cplfnctn|delete)\\b",
+					"match": "(?i)'?\\b(sum|mult|div|diffreni|diffrend|integral|delay|function|stdfnctn|tripunit|tripdlay|poweri|powerr|powerx|prop-int|lag|lead-lag|constant|shaft|pumpctl|steamctl|feedctl|invkin|cplfnctn|delete)\\b'?",
 					"name": "keyword.control.r53d"
 				},
 				{
-					"match": "(?i)\\b(power|htc-t|htrnrate|htc-temp|temp|reac-t|normarea|normvol|fwstif|restart|delete)\\b",
+					"match": "(?i)'?\\b(power|htc-t|htrnrate|htc-temp|temp|reac-t|normarea|normvol|fwstif|restart|delete)\\b'?",
 					"name": "keyword.control.r53d"
 				},
 				{
-					"match": "(?i)\\b(no-gamma|gamma-ac|gamma|point|nodal|separabl|table3|table4|table3a|table4a|ramona|hwr|gen|rbmk|ans79-1|ans79-3|ans94-1|ans94-4|ans05-1|ans05-4|ans73|sec|min|hr|day|wk)\\b",
+					"match": "(?i)'?\\b(no-gamma|gamma-ac|gamma|point|nodal|separabl|table3|table4|table3a|table4a|ramona|hwr|gen|rbmk|ans79-1|ans79-3|ans94-1|ans94-4|ans05-1|ans05-4|ans73|sec|min|hr|day|wk)\\b'?",
 					"name": "keyword.control.r53d"
 				}
 			]
 		},
 		"numbers": {
+			"lable": "Floating point numbers and integers",
 			"patterns": [
 				{
 					"match": "([+-]?\\d+[.]\\d+[eE]?[+-]?\\d*)",
@@ -97,6 +113,7 @@
 			]
 		},
 		"operators": {
+			"lable": "Operators including + sign",
 			"patterns": [
 				{
 					"match": "\\+|\\b(eq|ne|gt|ge|lt|le|l|n|and|or|xor)\\b",
