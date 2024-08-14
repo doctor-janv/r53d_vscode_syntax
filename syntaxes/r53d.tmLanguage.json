@@ -3,6 +3,9 @@
 	"name": "relap5-3d",
 	"patterns": [
 		{
+			"include": "#text"
+		},
+		{
 			"include": "#comments"
 		},
 		{
@@ -22,6 +25,16 @@
 		}
 	],
 	"repository": {
+		"text": {
+			"lable": "Strings",
+			"patterns": [
+				{
+					"begin": "[\"]",
+					"end": "[\"]",
+					"name": "input.r53d"
+				}
+			]
+		},
 		"comments": {
 			"lable": "Comment",
 			"patterns": [
