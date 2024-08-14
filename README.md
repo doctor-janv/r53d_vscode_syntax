@@ -20,87 +20,88 @@ Syntax highlighting for [RELAP5-3D](https://relap53d.inl.gov/SitePages/Home.aspx
 * After saving the changes you have to reboot vscode to apply them.
 
 ## Change default color scheme
-To change the default color scheme append the following settings to the `settings.json` file:
+The suggested color scheme is `Dark (Visual Studio -C/C++) Visual Studio Dark C++`, to change color scheme you can visit the following page https://code.visualstudio.com/docs/getstarted/themes.
+To change the default color scheme append the following settings to the user `settings.json` file:
 
 ```json
 
   "editor.tokenColorCustomizations": {
-        "textMateRules": [
-            // Strings.
-            {
-                "scope": "input.r53d",
-                "settings": {
-                  "foreground": "#ffffff"
-                }
-            },
-            // Title and End of the input file.
-            {
-              "scope": "support.type.property-name.r53d",
+      "textMateRules": [
+          {
+              "name": "Strings",
+              "scope": "input.r53d",
               "settings": {
-                "foreground": "#9CDCFE"
+                "foreground": "#ffffff"
               }
-            },
-            // Comments.
-            {
-              "scope": ["comment.line.r53d","comment.block.r53d"],
-              "settings": {
-                "foreground": "#57A64A"
-              }
-            },
-            // Heat Structures cards.
-            {
-              "scope": ["constant.other.character-class.regexp.r53d"],
-              "settings": {
-                "foreground": "#D16969"
-              }
-            },
-            // Neutronic cards.
-            {
-               "scope": ["keyword.other.operator.r53d"],
-               "settings": {
-                 "foreground": "#D8A0DF"
-                }
-            },
-            // Rest of the cards.
-            {
-               "scope": ["string.quoted.single.r53d"],
-               "settings": {
-                 "foreground": "#CE9178"
-                }
-            },
-            // Keywords.
-            {
-              "scope": ["keyword.control.r53d"],
+          },
+          {
+            "name": "Title and End of the input file",
+            "scope": "support.type.property-name.r53d",
+            "settings": {
+              "foreground": "#9CDCFE"
+            }
+          },
+          {
+            "name": "Comments",
+            "scope": ["comment.line.r53d","comment.block.r53d"],
+            "settings": {
+              "foreground": "#57A64A"
+            }
+          },
+          {
+            "name": "Heat Structures cards",
+            "scope": ["constant.other.character-class.regexp.r53d"],
+            "settings": {
+              "foreground": "#D16969"
+            }
+          },
+          {
+              "name": "Neutronic cards",
+              "scope": ["keyword.other.operator.r53d"],
               "settings": {
                 "foreground": "#D8A0DF"
               }
-            },
-            // Floating point numbers.
-            {
-              "scope": ["constant.numeric.r53d"],
+          },
+          {
+              "name": "Rest of the cards",
+              "scope": ["string.quoted.single.r53d"],
               "settings": {
-                "foreground": "#B5CEA8"
+                "foreground": "#CE9178"
               }
-            },
-            // Integers.
-            {
-              "scope": ["constant.language.r53d"],
-              "settings": {
-                "foreground": "#569CD6"
-              }
-            },
-            // Operators including + sign.
-            {
-              "scope": "keyword.operator.r53d",
-              "settings": {
-                "foreground": "#B4B4B4"
-              }
+          },
+          {
+            "name": "Keywords",
+            "scope": ["keyword.control.r53d"],
+            "settings": {
+              "foreground": "#D8A0DF"
             }
-        ]
-    }
+          },
+          {
+            "name": "Floating point numbers",
+            "scope": ["constant.numeric.r53d"],
+            "settings": {
+              "foreground": "#B5CEA8"
+            }
+          },
+          {
+            "name": "Integers",
+            "scope": ["constant.language.r53d"],
+            "settings": {
+              "foreground": "#569CD6"
+            }
+          },
+          {
+            "name": "Operators including + sign",
+            "scope": "keyword.operator.r53d",
+            "settings": {
+              "foreground": "#B4B4B4"
+            }
+          }
+      ]
+  }
 
 ```
-
+More information on how to set your configuration file can be found at this page https://code.visualstudio.com/docs/getstarted/settings.
 
 ## Add more language features
 
