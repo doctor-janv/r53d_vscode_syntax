@@ -1,14 +1,12 @@
 {
   "name": "r53d",
+  "publisher": "RELAP5-3D",
   "displayName": "relap5-3d",
   "description": "relap5-3d input files",
   "version": "0.0.1",
-  "engines": {
-    "vscode": "^1.86.0"
-  },
-  "categories": [
-    "Programming Languages"
-  ],
+  "icon": "images/r53d_icon.png",
+  "engines": {"vscode": "^1.86.0"},
+  "categories": ["Programming Languages"],
   "contributes": {
     "languages": [{
       "id": "r53d",
