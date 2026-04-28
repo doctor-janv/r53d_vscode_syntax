@@ -5,6 +5,7 @@
   "description": "relap5-3d input files",
   "version": "0.0.1",
   "icon": "images/r53d_icon.png",
+  "repository": {"type": "git", "url": "https://github.com/doctor-janv/r53d_vscode_syntax.git"},
   "engines": {"vscode": "^1.86.0"},
   "categories": ["Programming Languages"],
   "contributes": {
